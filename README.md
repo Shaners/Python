@@ -14,16 +14,13 @@ Pull latest version from github:
 
 ```git pull```
 
-
 Push changes to github:
 
 ```git push origin master```
 
-
 Run scripts:
 
 ```python <name of script>.py```
-
 
 ## Versioning
 **REVIEW this concept**
