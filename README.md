@@ -1,17 +1,19 @@
 # Python
-========
 Various learning and experimentation in Python
 
 ## Task List
 In Trello
 
 ## Installation
-*REMOVE this probably*
-N/A
+```git init```
+```git remote add origin https://github.com/Shaners/Python.git```
 
 ## Usage
-*REVIEW this concept*
-N/A
+Pull latest version from github:
+```git pull```
+
+Push changes to github:
+```git push origin master``
 
 ## Versioning
 *REVIEW this concept*
