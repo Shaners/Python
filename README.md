@@ -6,9 +6,11 @@ Various learning and experimentation in Python
 In Trello
 
 ## Installation
+*REMOVE this probably*
 N/A
 
 ## Usage
+*REVIEW this concept*
 N/A
 
 ## Versioning
