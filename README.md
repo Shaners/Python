@@ -6,17 +6,19 @@ In Trello
 
 ## Installation
 ```git init```
+
 ```git remote add origin https://github.com/Shaners/Python.git```
 
 ## Usage
-Pull latest version from github:
+Pull latest version from github: 
 ```git pull```
 
-Push changes to github:
-```git push origin master``
+Push changes to github: 
+```git push origin master```
 
 ## Versioning
 *REVIEW this concept*
+
 Semver doesn't make sense since this project doesn't offer an API but versioning is nice to mark progression.
 
 The versioning is: **MAJOR.MINOR.PATCH** where:
