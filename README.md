@@ -23,21 +23,22 @@ Run scripts:
 ```python <name of script>.py```
 
 ## Versioning
-**REVIEW this concept**
 
 Semver doesn't make sense since this project doesn't offer an API but versioning is nice to mark progression.
 
 The versioning is: **MAJOR.MINOR.PATCH** where:
 
-* MAJOR - Overhaul of UI or internal code
-* MINOR - New feature added
-* PATCH - Bug fix
+* MAJOR - Overhaul approach or concept
+* MINOR - New script added
+* PATCH - Bug fix to a script
 
 ## History
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
-| **v0.0.0** | 0000-00-00 | VERSION NOTES |
+| **v0.2.0** | 2018-04-19 | Added hello world script. |
+| **v0.1.0** | 2018-04-19 | Added string reverse script. |
+| **v0.0.0** | 2016-01-09 | Readme created and git init. |
 
 ## Credits
 
