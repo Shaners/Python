@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.3.0** | 2018-04-20 | Pig Latin converter has been added. |
 | **v0.2.1** | 2018-04-19 | String reverse works now. |
 | **v0.2.0** | 2018-04-19 | Added hello world script. |
 | **v0.1.0** | 2018-04-19 | Added string reverse script. |
