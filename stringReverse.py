@@ -5,4 +5,4 @@
 userInput = raw_input("Please enter a string:\n> ")
 
 # Print reversed input
-print(''.join(reversed(userInput)))
+print ''.join(reversed(userInput))

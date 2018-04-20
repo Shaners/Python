@@ -16,11 +16,11 @@ for i, word in enumerate(userInput):
     else:
       word += 'ay'
       break
-      
+
   word = word.lower()
   userInput[i] = word
 
 userInput[0] = userInput[0].capitalize()
 
 # Print string as Pig Latin
-print(' '.join(userInput) + '.')
+print ' '.join(userInput) + '.'
