@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.6.0** | 2018-04-20 | Palindrome checker added. |
 | **v0.5.0** | 2018-04-20 | Vowel counter added. |
 | **v0.4.0** | 2018-04-20 | Greeter added. |
 | **v0.3.0** | 2018-04-20 | Pig Latin converter has been added. |
