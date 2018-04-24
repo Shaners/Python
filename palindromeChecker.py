@@ -1,6 +1,9 @@
 # Palindrome Checker
 # This will prompt user for input and check to see if it is a palindrome
 
+# Refactor idea - this is more complicated than it needs to be
+# We should just reverse the string and then compare the two
+
 import re
 
 # Prompt string input from user
