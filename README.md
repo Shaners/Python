@@ -36,8 +36,8 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
-| **v0.8.0** | 2018-04-24 | Added comment script. |
-| **v0.7.1** | 2018-04-24 | Added more examples to helloWorld and fixed print for Python 3. |
+| **v0.8.0** | 2018-04-25 | Added comment script. |
+| **v0.7.1** | 2018-04-25 | Added more examples to helloWorld and fixed print for Python 3. |
 | **v0.7.0** | 2018-04-24 | Word counter added. |
 | **v0.6.0** | 2018-04-20 | Palindrome checker added. |
 | **v0.5.0** | 2018-04-20 | Vowel counter added. |
