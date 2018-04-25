@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.10.0** | 2018-04-25 | Added basic variable script. |
 | **v0.9.0** | 2018-04-25 | Added basic math script. |
 | **v0.8.0** | 2018-04-25 | Added comment script. |
 | **v0.7.1** | 2018-04-25 | Added more examples to helloWorld and fixed print for Python 3. |
