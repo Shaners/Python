@@ -2,7 +2,7 @@
 # This will prompt the user to enter a string in the console and then print that string in reverse to the console.
 
 # Prompt string input from user
-userInput = raw_input("Please enter a string:\n> ")
+userInput = input("Please enter a string:\n> ")
 
 # Print reversed input
-print ''.join(reversed(userInput))
+print(''.join(reversed(userInput)))

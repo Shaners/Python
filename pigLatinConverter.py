@@ -4,7 +4,7 @@
 vowels = ['a','e', 'i', 'o', 'u', 'y']
 
 # Prompt the user for a string
-userInput = raw_input("Please enter a string:\n> ")
+userInput = input("Please enter a string:\n> ")
 
 # Convert input to Pig Latin
 userInput = userInput.split()
@@ -23,4 +23,4 @@ for i, word in enumerate(userInput):
 userInput[0] = userInput[0].capitalize()
 
 # Print string as Pig Latin
-print ' '.join(userInput) + '.'
+print(' '.join(userInput) + '.')

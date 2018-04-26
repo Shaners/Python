@@ -6,7 +6,7 @@ import re
 count = 0
 
 # Prompt string input from user
-userInput = raw_input("Please enter a string:\n> ")
+userInput = input("Please enter a string:\n> ")
 
 # Count words
 userInput = userInput.lower().split()
@@ -20,4 +20,4 @@ for word in userInput:
         count += 1
 
 # Print the number of words to console
-print "There were %s words found." % count
+print(f"There were {count} words found.")
