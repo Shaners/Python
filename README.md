@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.11.0** | 2018-04-26 | Added height and weight converter. |
 | **v0.10.0** | 2018-04-25 | Added basic variable script. |
 | **v0.9.0** | 2018-04-25 | Added basic math script. |
 | **v0.8.0** | 2018-04-25 | Added comment script. |
