@@ -28,8 +28,14 @@ import random, time
 # key and unlocked room
 
 inventory = []
-
 player = {'has_key': False, 'equip_weapon': False}
+rooms = [{'name': 'forest',
+          'description': "You enter a dense dewy forest.\nTo the East you see some ruins.\nTo the West you see pebbles leading to a cave.",
+          'options': ['east', 'west']},
+         {'name': 'cave'},
+         {'name': 'ruins'},
+         {'name': 'cove'},
+         {'name': 'boss'}]
 
 def toContinue(message):
     print(message)
@@ -51,8 +57,24 @@ def equip_attempt(item):
   else:
     print(f"{item} is not something you can equip.")
 
+def enterRoom(roomNumber):
+    print(rooms[roomNumber].description)
+    print("What would you like to do?")
+    choice = input("> ").lower()
+
+    if choice == "help" or choice == "h":
+        print("Here are the instructions:")
+        instructions()
+        enterRoom(roomNumber)
+    elif choice == "inventory" or choice == "inv" or choice == "i":
+        inventory_check()
+        enterRoom(roomNumber)
+    else:
+        print(f"I don't understand '{choice}', try using help if you are lost.")
+        enterRoom(roomNumber)
+
 def room1():
-  print("\n  You enter a dense dewy forest. \nTo the East you see some ruins.")
+  print("\nYou enter a dense dewy forest. \nTo the East you see some ruins.")
   print("To the West you see pebbles leading to a cave.\nWhat do you do?")
 
   choice = input("> ")
