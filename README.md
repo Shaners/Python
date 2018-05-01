@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.12.0** | 2018-05-01 | Added old PyDagger script. |
 | **v0.11.1** | 2018-04-26 | Converted everything to Python3. |
 | **v0.11.0** | 2018-04-26 | Added height and weight converter. |
 | **v0.10.0** | 2018-04-25 | Added basic variable script. |
