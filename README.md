@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.17.1** | 2018-05-01 | Fixed PyDagger to work with Python 3 |
 | **v0.17.0** | 2018-05-01 | Added old Simple RPG script. |
 | **v0.16.0** | 2018-05-01 | Added old Pseudorandom script. |
 | **v0.15.0** | 2018-05-01 | Added old Perlin Noise script. |
