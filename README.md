@@ -36,6 +36,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.15.0** | 2018-05-01 | Added old Perlin Noise script. |
 | **v0.14.0** | 2018-05-01 | Added empty Dawn of Adventure Script. |
 | **v0.13.0** | 2018-05-01 | Added old PyBlade script. |
 | **v0.12.0** | 2018-05-01 | Added old PyDagger script. |
