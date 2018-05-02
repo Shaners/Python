@@ -32,6 +32,7 @@ import random, time
 inventory = []
 player = {'has_key': False, 'equip_weapon': False}
 # convert rooms to a class maybe
+
 rooms = [{'name': 'forest',
           'description': "\nYou enter a dense dewy forest.\n\nTo the East you see some ruins.\nTo the West you see pebbles leading to a cave.",
           'options': {'e': 2, 'w': 1}
@@ -41,15 +42,15 @@ rooms = [{'name': 'forest',
           'options': {'n': 3, 'e': 0}
          },
          {'name': 'ruins',
-          'description': "",
-          'options': {}
+          'description': "\nYou enter some ancient ruins of a people you don't know.\n\nYou can move North but a thick veil of mist blocks your vision.\nTo the west you see a lush forest.",
+          'options': {'n': 3, 'w': 0}
          },
          {'name': 'cove',
-          'description': "",
-          'options': {}
+          'description': "\nYou enter an over-grown cove. Waves lap a sandy grey beach.\n\nTo the North you see an exit over-grown with thick vines.\nTo the East you see ruins.\nTo the West you see a dark cave.",
+          'options': {'n': 4, 'w': 1, 'e': 2}
          },
          {'name': 'boss',
-          'description': "",
+          'description': "\nThe air is filled with an electric energy. A spiky mossy giant turtle sits in the corner. Suddenly it rears back on it's hind legs and begins to charge you.",
           'options': {}
          }]
 
@@ -96,40 +97,10 @@ def enterRoom(roomNumber): # lets do this by name, number is easier for now?
         print(f"I don't understand '{choice}', try using help if you are lost.")
         enterRoom(roomNumber)
 
-def room3():
-  print("\n  You enter some ancient ruins of a people you don't know.")
-  print("\nYou can move North but a thick veil of mist blocks your vision.")
-  print("\nTo the west you see a lush forest.\nWhat do you do?")
-
-
-  elif choice == "go north":
-    room4()
-  elif choice == "go west":
-    room1()
-
-
-def room4():
-  print("\n  You enter an over-grown cove. Waves lap a sandy grey beach.")
-  print("\nTo the North you see an exit over-grown with thick vines.")
-  print("\nTo the East you see ruins.\nTo the West you see a dark cave.")
-
-
-
-
-
-
-  elif choice == "go north":
-    room5()
-  elif choice == "go west":
-    room2()
-  elif choice == "go east":
-    room3()
 
   
 def room5():
-  print("\n  The air is filled with an electric energy. A spiky mossy giant ")
-  print("turtle sits in the corner. Suddenly it rears back on it's hind legs")
-  print("and begins to charge you.\nWhat do you do?")
+
 
   elif choice == "go south":
     room4()
