@@ -35,6 +35,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.21.0** | 2018-05-02 | Added Magic 8-Ball script. |
 | **v0.20.0** | 2018-05-01 | Added Basic function script. |
 | **v0.19.0** | 2018-05-01 | Added Basic Random script. |
 | **v0.18.0** | 2018-05-01 | Added Loop Continue Break script. |
