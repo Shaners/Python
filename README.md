@@ -5,9 +5,8 @@ Various learning and experimentation in Python
 In Trello
 
 ## Installation
-```git init```
 
-```git remote add origin https://github.com/Shaners/Python.git```
+```git clone https://github.com/Shaners/Python.git```
 
 ## Usage
 Pull latest version from github:
