@@ -46,5 +46,4 @@ def ask8Ball():
     else:
         return "Error: random number broken somehow."
 
-message = ask8Ball()
-print(message)
+print(ask8Ball())
