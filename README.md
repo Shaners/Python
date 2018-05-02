@@ -35,6 +35,7 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 
 | Version | Date | Changes |
 | ------- | ---- | ------- |
+| **v0.23.0** | 2018-05-02 | Added Guess the Number script. |
 | **v0.22.0** | 2018-05-02 | Added Error Handling script. |
 | **v0.21.0** | 2018-05-02 | Added Magic 8-Ball script. |
 | **v0.20.0** | 2018-05-01 | Added Basic function script. |
