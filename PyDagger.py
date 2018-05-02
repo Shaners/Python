@@ -1,5 +1,3 @@
-# old old code, redo this
-
 # Imports exit and random modules
 from sys import exit
 import random, time
@@ -14,34 +12,51 @@ import random, time
 # 1 weapon
 # Ability to die
 # Ability to win
-# Use of list
-# Use of dict
-# Use of function
-# Use of module
+# Use of list #
+# Use of dict #
+# Use of function #
+# Use of module #
+# Can quit #
 
 # To do:
 # Room navigation
-# Room descriptions
+# Better Room descriptions
 # picking up items
 # equipping weapon
 # locked room
 # key and unlocked room
 
+# parse input by word?
+# push these globals to start fuction or to opening seq?
+
 inventory = []
 player = {'has_key': False, 'equip_weapon': False}
+# convert rooms to a class maybe
 rooms = [{'name': 'forest',
-          'description': "You enter a dense dewy forest.\nTo the East you see some ruins.\nTo the West you see pebbles leading to a cave.",
-          'options': ['east', 'west']},
-         {'name': 'cave'},
-         {'name': 'ruins'},
-         {'name': 'cove'},
-         {'name': 'boss'}]
+          'description': "\nYou enter a dense dewy forest.\n\nTo the East you see some ruins.\nTo the West you see pebbles leading to a cave.",
+          'options': {'e': 2, 'w': 1}
+         },
+         {'name': 'cave',
+          'description': "\nYou enter a dimly lit cave. Your eyes slowly adjust to the darkness.\n\nTo the North goes deeper into the cave.\nTo the East you see a lush forest.",
+          'options': {'n': 3, 'e': 0}
+         },
+         {'name': 'ruins',
+          'description': "",
+          'options': {}
+         },
+         {'name': 'cove',
+          'description': "",
+          'options': {}
+         },
+         {'name': 'boss',
+          'description': "",
+          'options': {}
+         }]
 
 def toContinue(message):
     print(message)
     input("Press enter to continue... ")
 
-# Display inventory items to player
 def inventory_check():
   if not inventory:
       toContinue("You have no items! Your inventory is empty.")
@@ -57,8 +72,8 @@ def equip_attempt(item):
   else:
     print(f"{item} is not something you can equip.")
 
-def enterRoom(roomNumber):
-    print(rooms[roomNumber].description)
+def enterRoom(roomNumber): # lets do this by name, number is easier for now?
+    print(rooms[roomNumber]['description'])
     print("What would you like to do?")
     choice = input("> ").lower()
 
@@ -69,130 +84,53 @@ def enterRoom(roomNumber):
     elif choice == "inventory" or choice == "inv" or choice == "i":
         inventory_check()
         enterRoom(roomNumber)
+    elif choice == 'quit' or choice == 'exit':
+        exit(0)
+    elif choice.startswith('go '):
+      if choice[3] in rooms[roomNumber]['options']:
+        enterRoom(rooms[roomNumber]['options'][choice[3]])
+      else:
+        print(f"Sorry you cannot '{choice}'.")
+        enterRoom(roomNumber)
     else:
         print(f"I don't understand '{choice}', try using help if you are lost.")
         enterRoom(roomNumber)
-
-def room1():
-  print("\nYou enter a dense dewy forest. \nTo the East you see some ruins.")
-  print("To the West you see pebbles leading to a cave.\nWhat do you do?")
-
-  choice = input("> ")
-  choice = str.lower(choice)
-
-  if choice == "help" or choice == "h":
-    print("Here are the instructions again:")
-    instructions()
-    room1()
-  elif choice == "inventory" or choice == "inv" or choice == "i":
-    inventory_check()
-    room1()
-  elif choice == "go north" or choice == "go south":
-    print(f"Sorry you cannot {choice}.")
-    room1()
-  elif choice == "go east":
-    room3()
-  elif choice == "go west":
-    room2()
-  else:
-    print(f"I don't understand '{choice}', try using help if you are lost.")
-    room1()
-  
-def room2():
-  print("\n  You enter a dimly lit cave. Your eyes slowly adjust to the")
-  print(" darkness. \nTo the North goes deeper into the cave. \nTo the East you")
-  print(" see a lush forest.\nWhat do you do?")
-
-  choice = input("> ")
-  choice = str.lower(choice)
-
-  if choice == "help" or choice == "h":
-    print("Here are the instructions again:")
-    instructions()
-    room2()
-  elif choice == "inventory" or choice == "inv" or choice == "i":
-    inventory_check()
-    room2()
-  elif choice == "go west" or choice == "go south":
-    print(f"Sorry you cannot {choice}.")
-    room2()
-  elif choice == "go north":
-    room4()
-  elif choice == "go east":
-    room1()
-  else:
-    print("I don't understand '{choice}', try using help if you are lost.")
-    room2()
 
 def room3():
   print("\n  You enter some ancient ruins of a people you don't know.")
   print("\nYou can move North but a thick veil of mist blocks your vision.")
   print("\nTo the west you see a lush forest.\nWhat do you do?")
 
-  choice = input("> ")
-  choice = str.lower(choice)
 
-  if choice == "help" or choice == "h":
-    print("Here are the instructions again:")
-    instructions()
-    room3()
-  elif choice == "inventory" or choice == "inv" or choice == "i":
-    inventory_check()
-    room3()
-  elif choice == "go east" or choice == "go south":
-    print(f"Sorry you cannot {choice}.")
-    room3()
   elif choice == "go north":
     room4()
   elif choice == "go west":
     room1()
-  else:
-    print(f"I don't understand '{choice}', try using help if you are lost.")
-    room3()
+
 
 def room4():
   print("\n  You enter an over-grown cove. Waves lap a sandy grey beach.")
   print("\nTo the North you see an exit over-grown with thick vines.")
   print("\nTo the East you see ruins.\nTo the West you see a dark cave.")
 
-  choice = input("> ")
-  choice = str.lower(choice)
 
-  if choice == "help" or choice == "h":
-    print("Here are the instructions again:")
-    instructions()
-    room4()
-  elif choice == "inventory" or choice == "inv" or choice == "i":
-    inventory_check()
-    room4()
-  elif choice == "go south":
-    print(f"Sorry you cannot {choice}.")
-    room4()
+
+
+
+
   elif choice == "go north":
     room5()
   elif choice == "go west":
     room2()
   elif choice == "go east":
     room3()
-  else:
-    print(f"I don't understand '{choice}', try using help if you are lost.")
-    room4()
+
   
 def room5():
   print("\n  The air is filled with an electric energy. A spiky mossy giant ")
   print("turtle sits in the corner. Suddenly it rears back on it's hind legs")
   print("and begins to charge you.\nWhat do you do?")
 
-  choice = input("> ")
-  choice = str.lower(choice)
-
-  if choice == "help" or choice == "h":
-    print("Here are the instructions again:")
-    instructions()
-    room5()
-  elif choice == "inventory" or choice == "inv" or choice == "i":
-    inventory_check()
-    room5()
   elif choice == "go south":
     room4()
   elif choice == "fight":
@@ -212,7 +150,7 @@ def dead(cause):
 
 def opening_sequence():
   instructions()  
-  room1()
+  enterRoom(0)
 
 def instructions():
   print("\n *********************************** ")
@@ -221,10 +159,10 @@ def instructions():
   input("Press enter to continue... ")
   print("\n-Basic Movement-")
   print("To move around the world type:")
-  print(" Go east")
-  print(" Go west")
-  print(" Go north")
-  print(" Go south")
+  print(" go east")
+  print(" go west")
+  print(" go north")
+  print(" go south")
   input("Press enter to continue... ")
   print("\n-Checking your Inventory-")
   print("To view the items that you are carrying in your inventory type:")
