@@ -15,7 +15,7 @@ import random, time
 # Use of list #
 # Use of dict #
 # Use of function #
-# Use of module #
+# Use of module # TEST
 # Can quit #
 
 # To do:
