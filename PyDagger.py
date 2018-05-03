@@ -51,7 +51,7 @@ rooms = [{'name': 'forest',
          },
          {'name': 'boss',
           'description': "\nThe air is filled with an electric energy. A spiky mossy giant turtle sits in the corner. Suddenly it rears back on it's hind legs and begins to charge you.",
-          'options': {}
+          'options': {'s': 3}
          }]
 
 def toContinue(message):
@@ -59,24 +59,30 @@ def toContinue(message):
     input("Press enter to continue... ")
 
 def inventory_check():
-  if not inventory:
-      toContinue("You have no items! Your inventory is empty.")
-  else:
-      toContinue(str(inventory))
+    if not inventory:
+        toContinue("You have no items! Your inventory is empty.")
+    else:
+        toContinue(str(inventory))
 
 def equip_attempt(item):
-  if item not in inventory:
-    print(f"You don't have a {item} so you can't equip one. Check your inventory.")
-  elif item == "sword":
-    player['equip_weapon'] = True
-    print(f"Your {item} has been equipped.")
-  else:
-    print(f"{item} is not something you can equip.")
+    if item not in inventory:
+        print(f"You don't have a {item} so you can't equip one. Check your inventory.")
+    elif item == "sword":
+        player['equip_weapon'] = True
+        print(f"Your {item} has been equipped.")
+    else:
+        print(f"{item} is not something you can equip.")
 
 def enterRoom(roomNumber): # lets do this by name, number is easier for now?
     print(rooms[roomNumber]['description'])
     print("What would you like to do?")
     choice = input("> ").lower()
+
+    if roomNumber == 4:
+        if choice == "fight":
+            win()
+        else:
+            dead("a turtle crushed you.")
 
     if choice == "help" or choice == "h":
         print("Here are the instructions:")
@@ -88,65 +94,53 @@ def enterRoom(roomNumber): # lets do this by name, number is easier for now?
     elif choice == 'quit' or choice == 'exit':
         exit(0)
     elif choice.startswith('go '):
-      if choice[3] in rooms[roomNumber]['options']:
-        enterRoom(rooms[roomNumber]['options'][choice[3]])
-      else:
-        print(f"Sorry you cannot '{choice}'.")
-        enterRoom(roomNumber)
+        if choice[3] in rooms[roomNumber]['options']:
+            enterRoom(rooms[roomNumber]['options'][choice[3]])
+        else:
+            print(f"Sorry you cannot '{choice}'.")
+            enterRoom(roomNumber)
     else:
         print(f"I don't understand '{choice}', try using help if you are lost.")
         enterRoom(roomNumber)
 
-
-  
-def room5():
-
-
-  elif choice == "go south":
-    room4()
-  elif choice == "fight":
-    win()
-  else:
-    dead("a turtle crushed you.")
-  
 def win():
-  print("You've defeated the were-turtle and won your freedom!")
-  input("Press enter to exit... ")
-  exit(0)
+    print("You've defeated the were-turtle and won your freedom!")
+    input("Press enter to exit... ")
+    exit(0)
   
 def dead(cause):
-  print(f"Uh oh, {cause} A'int that a stick in the mud.")
-  input("Press enter to exit... ")
-  exit(0)
+    print(f"Uh oh, {cause} A'int that a stick in the mud.")
+    input("Press enter to exit... ")
+    exit(0)
 
 def opening_sequence():
-  instructions()  
-  enterRoom(0)
+    instructions()  
+    enterRoom(0)
 
 def instructions():
-  print("\n *********************************** ")
-  print(" *********** Instructions ********** ")
-  print(" *********************************** ")
-  input("Press enter to continue... ")
-  print("\n-Basic Movement-")
-  print("To move around the world type:")
-  print(" go east")
-  print(" go west")
-  print(" go north")
-  print(" go south")
-  input("Press enter to continue... ")
-  print("\n-Checking your Inventory-")
-  print("To view the items that you are carrying in your inventory type:")
-  print(" Inventory, inv, or i")
-  print("This will return a list of all the items you are currently")
-  print("carrying.\n")
-  input("Press enter to continue... ")
-  print("\n-Equiping Items-")
-  print("To equip an item type:")
-  print(" Equip item_name")
-  print("For example: Equip stick")
-  print("You can only equip armor and weapons that you are currently")
-  print("carrying in your inventory.")
-  input("Press enter to continue... ")
+    print("\n *********************************** ")
+    print(" *********** Instructions ********** ")
+    print(" *********************************** ")
+    input("Press enter to continue... ")
+    print("\n-Basic Movement-")
+    print("To move around the world type:")
+    print(" go east")
+    print(" go west")
+    print(" go north")
+    print(" go south")
+    input("Press enter to continue... ")
+    print("\n-Checking your Inventory-")
+    print("To view the items that you are carrying in your inventory type:")
+    print(" Inventory, inv, or i")
+    print("This will return a list of all the items you are currently")
+    print("carrying.\n")
+    input("Press enter to continue... ")
+    print("\n-Equiping Items-")
+    print("To equip an item type:")
+    print(" Equip item_name")
+    print("For example: Equip stick")
+    print("You can only equip armor and weapons that you are currently")
+    print("carrying in your inventory.")
+    input("Press enter to continue... ")
 
 opening_sequence()
