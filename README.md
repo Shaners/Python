@@ -31,6 +31,13 @@ The versioning is: **MAJOR.MINOR.PATCH** where:
 * MINOR - New script added
 * PATCH - Bug fix to a script
 
+## Misc.
+
+Check if a package is installed:
+
+```python -c "import math"```
+```echo $?```
+
 ## History
 
 | Version | Date | Changes |
